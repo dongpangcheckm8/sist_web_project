@@ -1,0 +1,20 @@
+package com.sist;
+/**
+ * 위원회 검증
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscMain {
+    
+	/**
+	 * main
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		
+
+	}
+
+}

@@ -1,0 +1,45 @@
+package com.sist;
+
+import java.sql.SQLException;
+
+/**
+ * 위원회 검증
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscMain {
+    
+	/**
+	 * main
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		GscPanDao dao =new GscPanDao();
+		GscPanVO pan=new GscPanVO();
+		pan.setCmId("james");
+		pan.setName("다현아빠");
+		pan.setPassword("1234");
+		pan.setUseYn("0");
+		
+		try {
+			dao.add(pan);
+
+		
+			//1건 입력==1건 조회
+			GscPanVO pan2=dao.get(pan.getCmId());
+			if(pan.getCmId().equals(pan2.getCmId())){
+				
+			}
+		
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}		
+		
+
+	}
+
+}

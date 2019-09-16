@@ -1,0 +1,31 @@
+/**
+ * 
+ */
+package com.sist;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import org.apache.log4j.Logger;
+
+/**
+ * @author sist1
+ *
+ */
+public class DeleteAllStatement implements StatementStrategy {
+	Logger log = Logger.getLogger(this.getClass());
+
+	/* (non-Javadoc)
+	 * @see com.sist.StatementStrategy#makePreparedStatement(java.sql.Connection)
+	 */
+	public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+		PreparedStatement ps =null;
+		//sql 문
+		StringBuilder sb=new StringBuilder();
+		sb.append("delete from gsc_pan ");		
+		ps = c.prepareStatement(sb.toString());
+		return ps;
+	}
+
+}

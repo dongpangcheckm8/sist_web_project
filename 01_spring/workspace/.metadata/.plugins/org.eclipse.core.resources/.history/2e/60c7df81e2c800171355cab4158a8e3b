@@ -1,0 +1,52 @@
+package com.sist;
+/**
+ * 위원회 Dao
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscPanDao {
+
+	/**
+	 * 위원회 멤버 추가
+	 * @param pan
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public void add(GscPanVO pan) throws
+	    ClassNotFoundException,SQLException{
+		String DB_URL = "jdbc:oracle:thin:@211.238.142.98:1521:orcl";
+        String DB_USER = "hy";
+        String DB_PASSWORD = "0109";
+
+        Connection conn = null;
+        Statement stmt = null;
+        ResultSet rs = null;
+
+        String query = "SELECT * FROM emp";
+        try {
+            // 드라이버를 로딩한다.
+            Class.forName("oracle.jdbc.driver.OracleDriver");
+        } catch (ClassNotFoundException e ) {
+            e.printStackTrace();
+        }
+
+        try {
+            // 데이터베이스의 연결을 설정한다.
+            conn = DriverManager.getConnection(DB_URL, DB_USER, DB_PASSWORD);		
+	}
+	
+    /**
+     * 위원회 멤버 단건 조회
+     * @param cmId
+     * @return GscPanVO 
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
+     
+	public GscPanVO get(String cmId) throws
+	 ClassNotFoundException,SQLException{
+		
+	}	
+}

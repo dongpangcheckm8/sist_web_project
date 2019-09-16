@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aop-reference-model>
+<aop-project name="SpringIoC05"/>
+<aop-project name="SpringJUnit06"/>
+</aop-reference-model>

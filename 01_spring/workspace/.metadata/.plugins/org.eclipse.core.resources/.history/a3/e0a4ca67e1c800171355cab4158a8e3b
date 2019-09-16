@@ -1,0 +1,32 @@
+package com.sist;
+/**
+ * 위원회 Dao
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscPanDao {
+
+	/**
+	 * 위원회 멤버 추가
+	 * @param pan
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public void add(GscPanVO pan) throws
+	 ClassNotFoundException,SQLException{
+		
+	}
+	
+    /**
+     * 위원회 단건 조회
+     * @param cmId
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
+	public GscPanVO get(String cmId) throws
+	 ClassNotFoundException,SQLException{
+		
+	}	
+}
