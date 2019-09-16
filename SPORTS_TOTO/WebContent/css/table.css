@@ -1,0 +1,161 @@
+body{
+	background-image: url("../image/stadium.png");
+}
+h2{
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_content{
+	border-collapse: collapse;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: #3ADF00;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_content th,td{
+	color:black;
+}
+#table_content th{
+	background-color: #CEFBC9;
+	color:black;
+	border-color: #3ADF00;
+}
+#table_content td{
+	border-color: #3ADF00;
+	border-bottom-style: dotted;
+}
+#table_content a:link {
+	color: black; text-decoration: none;
+}
+#table_content a:visited {
+	color: black; text-decoration: none;
+}
+#table_content a:hover {
+	color: #3E9D37; text-decoration: underline;
+}
+#table_menu a:link {
+	color: #3E9D37; text-decoration: none;
+}
+#table_menu a:visited {
+	color: #3E9D37; text-decoration: none;
+}
+#table_menu a:hover {
+	color: #22741C; text-decoration: underline;
+}
+#table_member{
+	border-collapse: collapse;
+	border-top-style: solid;
+	border-bottom-style: solid;
+	border-color: #3ADF00;
+	border-radius:1em;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_member th,td{
+	color:black;
+}
+#table_member th{
+	background-color: #CEFBC9;
+	color:black;
+	border-color: #3ADF00;
+}
+#table_member td{
+	border-color: #3ADF00;
+}
+#table_member a:link {
+	color: black; text-decoration: none;
+}
+#table_member a:visited {
+	color: black; text-decoration: none;
+}
+#table_member a:hover {
+	color: #3E9D37; text-decoration: underline;
+}
+#table_content2{
+	border-top-style: none;
+	border-bottom-style: none;
+	border-color: #3ADF00;
+	border-top-left-radius:1em;
+	border-top-right-radius:1em;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_content2 th,td{
+	color:black;
+}
+#table_content2 th{
+	background-color: #CEFBC9;
+	color:black;
+	border-color: #3ADF00;
+}
+#table_content2 td{
+	border-color: #3ADF00;
+}
+#table_content2 a:link {
+	color: black; text-decoration: none;
+}
+#table_content2 a:visited {
+	color: black; text-decoration: none;
+}
+#table_content2 a:hover {
+	color: #3E9D37; text-decoration: underline;
+}
+#table_content3{
+	border-collapse: collapse;
+	border-top-style: none;
+	border-bottom-style: none;
+	border-color: #3ADF00;
+	border-bottom-left-radius:1em;
+	border-bottom-right-radius:1em;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_content3 th,td{
+	color:black;
+}
+#table_content3 th{
+	background-color: #CEFBC9;
+	color:black;
+	border-color: #3ADF00;
+}
+#table_content3 td{
+	border-color: #3ADF00;
+}
+#table_content3 a:link {
+	color: black; text-decoration: none;
+}
+#table_content3 a:visited {
+	color: black; text-decoration: none;
+}
+#table_content3 a:hover {
+	color: #3E9D37; text-decoration: underline;
+}
+#table_member2{
+	border-top-style: none;
+	border-bottom-style: none;
+	border-color: #3ADF00;
+	border-radius:1em;
+	background-color: #FFFFFF;
+	opacity: 0.92;
+}
+#table_member2 th,td{
+	color:black;
+}
+#table_member2 th{
+	background-color: #CEFBC9;
+	color:black;
+	border-color: #3ADF00;
+}
+#table_member2 td{
+	border-color: #3ADF00;
+}
+#table_member2 a:link {
+	color: black; text-decoration: none;
+}
+#table_member2 a:visited {
+	color: black; text-decoration: none;
+}
+#table_member2 a:hover {
+	color: #3E9D37; text-decoration: underline;
+}

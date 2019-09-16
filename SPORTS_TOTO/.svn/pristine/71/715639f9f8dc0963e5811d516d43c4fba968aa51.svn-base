@@ -1,0 +1,78 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8" import="com.sist.dao.*, java.util.*"%>
+<%
+	String teamname=request.getParameter("teamname");
+	teamname=teamname.replaceAll(" ", "");
+	TeamInfoDAO dao=new TeamInfoDAO(new DBConOracle());
+	List<TeamInfoVO> list=dao.getWantedTeam(teamname);
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Insert title here</title>
+	<link rel="stylesheet" type="text/css" href="../css/table.css">
+</head>
+<body>
+	<center>
+	<table height="300">
+		
+	</table>
+				<table id="table_content" border="1" cellspacing="0" >
+					<tr>
+						<td align="center" colspan="10">
+						<%
+							for(TeamInfoVO vo:list){
+								%>
+								<img alt="" src="<%=vo.getTeamLogo()%>"></br>
+								<%=vo.getTeamName() %></br>
+								소속리그(팀 순위) : <%=vo.getLeagueName() %>(<%=vo.getTeamRank() %>)
+								</br>
+						</td>
+					</tr>
+					<tr align="center">
+						<th>경기 수</th>
+						<th>승점</th>
+						<th>승</th>
+						<th>무</th>
+						<th>패</th>
+						<th>골득실</th>
+						<th>총 득점</th>
+						<th>경기당 득점</th>
+						<th>총 실점</th>
+						<th>경기당 실점</th>
+					</tr>
+					<tr align="center">
+						<td><%=vo.getNumberOfMatches() %></td>
+						<td><%=vo.getPoints() %></td>
+						<td><%=vo.getWins() %></td>
+						<td><%=vo.getDraws() %></td>
+						<td><%=vo.getLoses() %></td>
+						<td><%=vo.getGoalsMargin() %></td>
+						<td><%=vo.getTotalGoalsGet() %></td>
+						<td><%=vo.getAvgGoalsGet() %></td>
+						<td><%=vo.getTotalGoalsLost() %></td>
+						<td><%=vo.getAvgGoalsLost() %></td>
+					</tr>
+				</table>
+				<table height="30" align="center">
+					<tr>
+						<th>
+						<a href="../project_main/main.jsp">
+							<input type="button" value="홈">
+						</a>
+						</th>
+						<th>
+						<a href="../game/info_game.jsp">
+							<input type="button" value="경기 정보">
+						</a>
+						</th>
+					</tr>
+				</table>
+				<%
+			}
+		%>
+	</center>
+</body>
+</html>

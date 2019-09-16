@@ -1,0 +1,76 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="com.sist.dao.*"%>
+<%
+
+	//한글변환
+	request.setCharacterEncoding("EUC-KR");
+	String name = request.getParameter("name");
+	String id = request.getParameter("id");
+	String pwd = request.getParameter("pwd");
+	String gender = request.getParameter("gender");
+	String email = request.getParameter("email");
+	String address = request.getParameter("address");
+	String phone = request.getParameter("phone");
+	String birthday=request.getParameter("birthday");
+	
+	MemberVO vo = new MemberVO();
+	vo.setName(name);
+	vo.setId(id);
+	vo.setPwd(pwd);
+	vo.setGender(gender);
+	vo.setEmail(email);
+	vo.setAddress(address);
+	vo.setPhone(phone);
+	vo.setBirthday(birthday);
+	
+	if(vo.getBirthday().length()!=8){
+	%>
+		<script type="text/javascript">
+		alert("생년월일의 형식이 올바르지 않습니다.");
+		history.back();
+		</script>
+	<%
+	}else{
+		//DataBase 전송
+		MemberDAO dao=new MemberDAO(new DBConOracle());
+		dao.memberInsert(vo);
+		
+		//화면 이동
+		
+	}
+%>
+<html>
+<head>
+<title>Close Window Timer</title>
+<meta http-equiv="Content-Type" content="text/html; charset=euc-kr">
+<script language="JavaScript">
+function closeWin(thetime) {
+setTimeout("window.close()", thetime); //1000 은 1초를 의미합니다.
+}
+</script>
+</head> 
+<body onLoad="closeWin('1000')">
+이창은 5초후 자동으로 창이 닫힘니다.<br>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

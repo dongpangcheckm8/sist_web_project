@@ -1,0 +1,74 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8" import="com.sist.dao.*, java.util.*"%>
+<%
+	String matchDate=request.getParameter("date");
+	String homeTeam=request.getParameter("hometeam");
+	String awayTeam=request.getParameter("awayteam");
+	String id=request.getParameter("id");
+	if(id.equals("null")){
+		%>
+<script type="text/javascript">
+			alert("로그인을 해주세요!");
+			history.back();
+		</script>
+<%
+	}
+	//matchDate=matchDate.replaceAll(" ", "");
+	PurchaseDAO dao=new PurchaseDAO(new DBConOracle());
+	List<PurchaseVO> list=dao.getPurchaseAllData(matchDate, homeTeam, awayTeam, id);
+%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<table border="0" width="1100" align="center">
+		<%
+			for(PurchaseVO vo:list){
+				%>
+		<tr>
+			<th><img alt="" src="<%=vo.getTeamLogo()%>" width="300"
+				height="300" align="center"></th>
+			<th align="center" valign="center" width="30"><font size="24pt">vs</font></th>
+			<th><img alt="" src="<%=vo.getTeam2Logo()%>" width="300"
+				height="300" align="center"></th>
+		</tr>
+		<tr>
+			<td width="300" align="center">
+				<%=vo.getHomeTeam() %>
+			</td>
+			<td width="30"></td>
+			<td width="300" align="center">
+				<%=vo.getAwayTeam() %>
+			</td>
+		</tr>
+		<tr>
+			<td width="300" align="center">
+				<%=vo.getTeamRank() %>
+			</td>
+			<td width="30"></td>
+			<td width="300" align="center">
+				<%=vo.getTeam2Rank() %>
+			</td>
+		</tr>
+		<%
+			}
+		%>
+	</table>
+	<table>
+			<tr>
+				<td>베팅할 게임 머니</td>
+				<form>
+				<td>
+					<input type="text" name="gamemoney">
+					<input type="submit" value="베팅">
+					<input type="button" value="돌아가기" onclick="javascript:history.back()">
+				 </td>
+				</form>
+			</tr>
+		</table>
+</body>
+</html>

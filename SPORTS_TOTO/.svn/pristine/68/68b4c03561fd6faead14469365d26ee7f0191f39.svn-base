@@ -1,0 +1,21 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="com.sist.dao.*,java.util.*"%>
+<%
+	request.setCharacterEncoding("EUC-KR");
+	String id=(String)session.getAttribute("id");
+	String name=request.getParameter("name");
+	String gamemoney=request.getParameter("gamemoney");
+	String charge=request.getParameter("charge");
+	
+	ChargeVO vo=new ChargeVO();
+	vo.setId(id);
+	vo.setName(name);
+	vo.setGamemoney(gamemoney);
+	vo.setCharge(charge);
+	
+	ChargeDAO dao=new ChargeDAO(new DBConOracle());
+	dao.chargeInsert(vo);
+	
+	response.sendRedirect("mypage.jsp");
+%>

@@ -1,0 +1,75 @@
+package com.sist.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.sist.conn.DBConOracle;
+import com.sist.conn.SuperCon;
+
+public class Score {
+	private PreparedStatement ps;
+	private Connection conn=null;
+	private SuperCon connMaker=null;
+	private static PurchaseDAO Pdao;
+	private static MatchInfoDAO Mdao;
+	
+	public Score(SuperCon spCon) {
+		connMaker=spCon;
+	}
+	
+	
+	// 연결 해제
+	public void disConnection() {
+		try {
+			if(ps!=null) {
+				ps.close();
+			}
+			if(conn!=null	) {
+				conn.close();
+			}
+		}
+		catch(Exception ex) {
+			System.out.println(ex.getMessage());
+		}
+	}
+	
+	public int getMoney(String id){
+		List<PurchaseVO>list=new ArrayList<>();
+		try {
+			String date, hometeam, result, myresult;
+			
+			PurchaseDAO Pdao=new PurchaseDAO(new DBConOracle());
+			MatchInfoDAO Mdao=new MatchInfoDAO(new DBConOracle());
+			list=Pdao.PostData(id);
+			
+			for(PurchaseVO vo:list) {
+				date=vo.getMatchDate();
+				hometeam=vo.getHomeTeam();
+				result=Mdao.GetGameResult(date, hometeam);
+				System.out.println(result);
+				myresult=Pdao.GetGameResult(date, hometeam, id);
+				System.out.println(myresult);
+				System.out.println();
+				
+				if(result.equals("경기전")) {
+					continue;
+				} else if(result.equals(myresult)){
+					return 0;
+				}
+			}
+			
+			
+		}catch (Exception e) {
+			System.out.println("getMoney : " + e.getMessage());
+		}
+		
+		return 0;
+	}
+	
+	public static void main(String[] args) {
+		Score scr=new Score(new DBConOracle());
+		scr.getMoney("admin");
+	}
+}

@@ -1,0 +1,26 @@
+<%@page import="java.util.concurrent.Delayed"%>
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@page import="java.text.SimpleDateFormat"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR"%>
+<%@ page import="java.util.*, com.sist.dao.*" %>
+<%
+	MatchInfoDAO dao= new MatchInfoDAO(new DBConOracle());
+	Date date = new Date();
+	SimpleDateFormat sdf=new SimpleDateFormat("hh:mm:ss a");
+	String today=sdf.format(date).toString();
+	
+	out.print(today);
+	
+	
+		if(today.equals("06:55:50 ¿ÀÈÄ")){
+			dao.DropMatchInfo();
+			dao.CreateMatchInfo();
+			
+			dao.getMatchInfoData();
+			dao.insertextraData();
+			response.setIntHeader("Refresh", 1);
+		}else {
+			response.setIntHeader("Refresh", 1);
+		}
+%>

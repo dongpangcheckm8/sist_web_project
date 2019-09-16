@@ -1,0 +1,29 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="com.sist.dao.*,java.util.*"%>
+<%
+	//업데이트
+	request.setCharacterEncoding("EUC-KR");
+	String no=request.getParameter("no");
+	String id=request.getParameter("id");
+	String name=request.getParameter("name");
+	String premoney=request.getParameter("gamemoney");
+	String precharge=request.getParameter("charge");
+	
+	int sum=(Integer.parseInt(premoney)+Integer.parseInt(precharge));
+	String gamemoney=Integer.toString(sum);
+	
+	String charge="0";
+	
+	ChargeVO vo=new ChargeVO();
+	vo.setGamemoney(gamemoney);
+	vo.setCharge(charge);
+	
+	ChargeDAO dao=new ChargeDAO(new DBConOracle());
+	dao.chargeUpdate(gamemoney, charge, id);
+	
+	//삭제
+	dao.ChargeDelete(id,no);
+	
+	response.sendRedirect("mypage.jsp");
+%>

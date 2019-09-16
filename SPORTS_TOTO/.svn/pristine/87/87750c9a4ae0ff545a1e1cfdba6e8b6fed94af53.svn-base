@@ -1,0 +1,153 @@
+package com.sist.dao;
+
+import java.util.Date;
+
+public class PurchaseVO {
+
+	private String teamLogo;
+	private String team2Logo;
+	private String homeTeam;
+	private String awayTeam;
+	private int teamRank;
+	private int team2Rank;
+	private String matchDate;
+	private String winDivRate;
+	private String drawDivRate;
+	private String loseDivRate;
+	private String divRate;
+	private String matchResult;
+	private String id;
+	private String gamemoney;
+	private String bettingmoney;
+	
+	private Date regdate;
+
+	public String getDivRate() {
+		return divRate;
+	}
+	
+	public void setDivRate(String divRate) {
+		this.divRate = divRate;
+	}
+	
+	public Date getRegdate() {
+		return regdate;
+	}
+
+	public void setRegdate(Date regdate) {
+		this.regdate = regdate;
+	}
+	
+	public String getTeamLogo() {
+		return teamLogo;
+	}
+
+	public void setTeamLogo(String teamLogo) {
+		this.teamLogo = teamLogo;
+	}
+
+	public String getTeam2Logo() {
+		return team2Logo;
+	}
+
+	public void setTeam2Logo(String team2Logo) {
+		this.team2Logo = team2Logo;
+	}
+
+	public String getHomeTeam() {
+		return homeTeam;
+	}
+
+	public void setHomeTeam(String homeTeam) {
+		this.homeTeam = homeTeam;
+	}
+
+	public String getAwayTeam() {
+		return awayTeam;
+	}
+
+	public void setAwayTeam(String awayTeam) {
+		this.awayTeam = awayTeam;
+	}
+
+	public int getTeamRank() {
+		return teamRank;
+	}
+
+	public void setTeamRank(int teamRank) {
+		this.teamRank = teamRank;
+	}
+
+	public int getTeam2Rank() {
+		return team2Rank;
+	}
+
+	public void setTeam2Rank(int team2Rank) {
+		this.team2Rank = team2Rank;
+	}
+
+	public String getMatchDate() {
+		return matchDate;
+	}
+
+	public void setMatchDate(String matchDate) {
+		this.matchDate = matchDate;
+	}
+
+	public String getWinDivRate() {
+		return winDivRate;
+	}
+
+	public void setWinDivRate(String winDivRate) {
+		this.winDivRate = winDivRate;
+	}
+
+	public String getDrawDivRate() {
+		return drawDivRate;
+	}
+
+	public void setDrawDivRate(String drawDivRate) {
+		this.drawDivRate = drawDivRate;
+	}
+
+	public String getLoseDivRate() {
+		return loseDivRate;
+	}
+
+	public void setLoseDivRate(String loseDivRate) {
+		this.loseDivRate = loseDivRate;
+	}
+
+	public String getMatchResult() {
+		return matchResult;
+	}
+
+	public void setMatchResult(String matchResult) {
+		this.matchResult = matchResult;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getGamemoney() {
+		return gamemoney;
+	}
+
+	public void setGamemoney(String gamemoney) {
+		this.gamemoney = gamemoney;
+	}
+	
+	public String getBettingmoney() {
+		return bettingmoney;
+	}
+
+	public void setBettingmoney(String bettingmoney) {
+		this.bettingmoney = bettingmoney;
+	}
+	
+}

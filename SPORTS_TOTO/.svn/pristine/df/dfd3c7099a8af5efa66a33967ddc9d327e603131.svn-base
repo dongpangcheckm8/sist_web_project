@@ -1,0 +1,122 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<link rel="stylesheet" type="text/css" href="../css/table.css?ver=6">
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+	<title>Insert title here</title>
+	<script type="text/javascript">
+    
+        // 필수 입력정보인 아이디, 비밀번호가 입력되었는지 확인하는 함수
+        function checkValue()
+        {
+            if(!document.userInfo.id.value){
+                alert("아이디를 입력하세요.");
+                return false;
+            }
+            
+            if(!document.userInfo.password.value){
+                alert("비밀번호를 입력하세요.");
+                return false;
+            }
+            
+            // 비밀번호와 비밀번호 확인에 입력된 값이 동일한지 확인
+            if(document.userInfo.password.value != document.userInfo.passwordcheck.value ){
+                alert("비밀번호를 동일하게 입력하세요.");
+                return false;
+            }
+        }
+    </script>
+</head>
+<body>
+	<center>
+		<form action="newmember_ok.jsp" method="post" name="userInfo" onsubmit="return checkValue()">
+			<table id="table_member2" border="1" width="400" height="600"
+				cellspacing="0">
+				<tr>
+					<td colspan="2" align="center"
+						style="border-top-left-radius: 1em; border-top-right-radius: 1em;">
+						<h1>회원가입</h1>
+					</td>
+				</tr>
+				<tr>
+					<th width="30%">이름</th>
+					<td width="70%"><input type="text" name="name"></td>
+				</tr>
+				<tr>
+					<th width="30%">아이디</th>
+					<td width="70%">
+						<input type="text" name="id">
+						 <input type="button" value="중복확인">
+					</td>
+				</tr>
+				<tr>
+					<th width="30%">비밀번호</th>
+					<td width="70%"><input type="password" name="password"></td>
+				</tr>
+				<tr>
+					<th width="30%">비밀번호 확인</th>
+					<td width="70%"><input type="password" name="passwordcheck"></td>
+				</tr>
+				<tr>
+					<th width="30%">성별</th>
+					<td width="70%">
+					<input type="radio" name="gender" value="남자" checked="checked">남자
+					<input type="radio" name="gender" value="여자">여자</td>
+				</tr>
+				<tr>
+					<th width="30%">생일</th>
+					<td width="70%"><jsp:include page="calendar.jsp"></jsp:include></td>
+				</tr>
+				<tr>
+					<th width="30%">이메일</th>
+					<td width="70%"><input type="text" name="email"></td>
+				</tr>
+				<tr>
+					<th width="30%">주소</th>
+					<td width="70%"><input type="text" name="address"></td>
+				</tr>
+				<tr>
+					<th width="30%">핸드폰번호</th>
+					<td width="70%"><input type="text" name="phone"></td>
+				</tr>
+				<tr>
+					<td colspan="2" align="center"
+						style="border-bottom-left-radius: 1em; border-bottom-right-radius: 1em;">
+						<input type="submit" value="회원 가입">
+						<input type="button" value="취소" onclick="self.close();">
+					</td>
+				</tr>
+			</table>
+		</form>
+	</center>
+</body>
+</html>
+<%--
+		<tr>
+			<td colspan="2" align="center">
+			<input type="submit" value="글쓰기"> 
+			<input type="button" value="취소" onclick="javascript:history.back()"></td>
+		</tr>
+ --%>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+<%@page import="com.sist.conn.DBConOracle"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR"
+    pageEncoding="EUC-KR" import="com.sist.dao.*,java.util.*"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+<title>Insert title here</title>
+</head>
+<body>
+	<center>
+		<table id="table_member" border="0" align="center" width="700" cellspacing="0">
+      	<h3>베팅 정보</h3>
+        <%--  <%
+            for( vo:list){
+         %> --%>
+		<tr height="60" align="center">
+			<th width="15%">구매 날짜</th>
+			<th width="15%">경기 날짜</th>
+			<th width="15%">홈 팀</th>
+			<th width="15%">어웨이 팀</th>
+			<th width="10%">승/무/패</th>
+			<th width="8%">배당률</th>
+			<th width="15%">베팅 금액</th>
+			<th width="7%">결과</th>
+		</tr>
+		<tr align="center">
+			<td>구매 날짜</td>
+			<td>경기 날짜</td>
+			<td>홈 팀</td>
+			<td>어웨이 팀</td>
+			<td>승/무/패</td>
+			<td>배당률</td>
+			<td>베팅 금액</td>
+			<td>결과</td>
+		</tr>
+         <%-- <%
+            }
+         %> --%>
+      </table>
+   </center>
+</body>
+</html>
