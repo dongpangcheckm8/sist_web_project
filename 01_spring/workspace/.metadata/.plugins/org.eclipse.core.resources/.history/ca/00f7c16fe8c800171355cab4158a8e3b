@@ -1,0 +1,16 @@
+package com.sist;
+/**
+ * 위원회 검증
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscMain {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+	}
+
+}

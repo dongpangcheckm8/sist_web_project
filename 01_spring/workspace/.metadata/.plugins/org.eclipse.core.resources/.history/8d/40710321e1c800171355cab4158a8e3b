@@ -1,0 +1,15 @@
+package com.sist;
+
+public class GscPanDao {
+
+	public void add(GscPanVO pan) throws
+	 ClassNotFoundException,SQLException{
+		
+	}
+	
+	
+	public void get(String cmId) throws
+	 ClassNotFoundException,SQLException{
+		
+	}	
+}

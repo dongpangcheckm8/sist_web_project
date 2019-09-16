@@ -1,0 +1,110 @@
+
+2017-11-20 09:28:11,707
+DEBUG : com.sist.CalcSumTest.sumOfNumber(CalcSumTest.java:15)
+path:/D:/sub/01_spring/workspace/SpringStratege07_EX/target/classes/com/sist/number.txt
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.CalcSumTest.sumOfNumber(CalcSumTest.java:18)
+path:/D:/sub/01_spring/workspace/SpringStratege07_EX/target/classes/com/sist/number.txt
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+1
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+2
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+3
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+4
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+5
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+6
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+7
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+8
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+9
+
+
+2017-11-20 09:31:34,057
+DEBUG : com.sist.Calculator.calcSum(Calculator.java:24)
+10
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+1
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+2
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+3
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+4
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+5
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+6
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+7
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+8
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+9
+
+
+2017-11-20 09:57:21,384
+DEBUG : com.sist.Calculator$1.doSomethingWithReader(Calculator.java:74)
+10
+

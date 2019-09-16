@@ -1,0 +1,104 @@
+package com.sist;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+import org.springframework.jdbc.core.JdbcTemplate;
+
+/**
+ * 전략패턴으로 add/delete
+ * try{}catch{}finally 처리
+ * @author sist1
+ *
+ */
+public class JdbcContext {
+	Logger log = Logger.getLogger(this.getClass());
+	
+	private DataSource dataSource;
+	
+	
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+    
+	public int updateSql(final String query,final GscPanVO pan) throws SQLException{
+		int flag = 0;
+		flag = jdbcContextWithStatementStrategy(
+				new StatementStrategy(){
+					public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+						PreparedStatement ps =null;
+						//sql 문
+						StringBuilder sb=new StringBuilder();
+						sb.append(query);		
+						
+						
+						ps = c.prepareStatement(sb.toString());
+						ps.setString(1, pan.getCmId());
+						ps.setString(2, pan.getName());
+						ps.setString(3, pan.getPassword());
+						ps.setString(4, pan.getUseYn());							
+						return ps;
+					}			
+				}
+		);		
+		return flag;
+	}
+	
+	public int executeSql(final String query) throws SQLException{
+		int flag = 0;
+		flag = jdbcContextWithStatementStrategy(
+				new StatementStrategy(){
+					public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+						PreparedStatement ps =null;
+						//sql 문
+						StringBuilder sb=new StringBuilder();
+						sb.append(query);		
+						ps = c.prepareStatement(sb.toString());
+						return ps;
+					}			
+				}
+		);		
+		return flag;
+	}
+
+	public int jdbcContextWithStatementStrategy(StatementStrategy stmt)
+			throws SQLException{
+		int flag = 0;
+		Connection con       = null;
+		PreparedStatement ps = null;
+		
+		try{
+			con = dataSource.getConnection();//변경발생			
+			
+			ps = stmt.makePreparedStatement(con);
+			
+			flag = ps.executeUpdate();
+		}catch(SQLException e){
+			throw e;
+			
+		}finally{
+			if(ps !=null){
+				try{
+					ps.close();
+				}catch(SQLException e){
+					
+				}
+			}
+			if(con !=null){
+				try{
+					con.close();
+				}catch(SQLException e){
+					
+				}
+			}
+		}
+		
+		
+		return flag;
+	}
+    	
+}

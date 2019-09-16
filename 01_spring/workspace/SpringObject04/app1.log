@@ -1,0 +1,475 @@
+
+2017-11-15 14:26:03,260
+DEBUG : com.sist.GscMain.main(GscMain.java:38)
+deleteFlag:1
+
+
+2017-11-15 14:26:03,291
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:84)
+======================
+
+
+2017-11-15 14:26:03,291
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:85)
+sql:	INSERT INTO GSC_PAN 
+  (                 
+    CM_ID,          
+    NAME,           
+    PASSWORD,       
+    USE_YN          
+  )                 
+  VALUES            
+  (                 
+    ?,              
+    ?,              
+    ?,              
+    ?               
+  )                 
+
+
+
+2017-11-15 14:26:03,291
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:86)
+======================
+
+
+2017-11-15 14:26:03,291
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:95)
+======================
+
+
+2017-11-15 14:26:03,291
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:96)
+pan:	GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:26:03,307
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:97)
+flag:	1
+
+
+2017-11-15 14:26:03,307
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:98)
+======================
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:139)
+======================
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:140)
+sql:	SELECT CM_ID,        
+       NAME,         
+       PASSWORD,     
+       USE_YN        
+  FROM GSC_PAN       
+ WHERE CM_ID = ?     
+
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:141)
+======================
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:143)
+======================
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:144)
+pan:	james
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:145)
+======================
+
+
+2017-11-15 14:26:03,338
+DEBUG : com.sist.GscMain.main(GscMain.java:60)
+데이터 등록 성공GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:27:09,672
+DEBUG : com.sist.GscMain.main(GscMain.java:38)
+deleteFlag:1
+
+
+2017-11-15 14:27:09,719
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:85)
+======================
+
+
+2017-11-15 14:27:09,719
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:86)
+sql:	INSERT INTO GSC_PAN 
+  (                 
+    CM_ID,          
+    NAME,           
+    PASSWORD,       
+    USE_YN          
+  )                 
+  VALUES            
+  (                 
+    ?,              
+    ?,              
+    ?,              
+    ?               
+  )                 
+
+
+
+2017-11-15 14:27:09,719
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:87)
+======================
+
+
+2017-11-15 14:27:09,719
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:96)
+======================
+
+
+2017-11-15 14:27:09,719
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:97)
+pan:	GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:27:09,734
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:98)
+flag:	1
+
+
+2017-11-15 14:27:09,734
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:99)
+======================
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:140)
+======================
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:141)
+sql:	SELECT CM_ID,        
+       NAME,         
+       PASSWORD,     
+       USE_YN        
+  FROM GSC_PAN       
+ WHERE CM_ID = ?     
+
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:142)
+======================
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:144)
+======================
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:145)
+pan:	james
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:146)
+======================
+
+
+2017-11-15 14:27:09,797
+DEBUG : com.sist.GscMain.main(GscMain.java:60)
+데이터 등록 성공GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:37:32,705
+DEBUG : com.sist.GscMain.main(GscMain.java:38)
+deleteFlag:1
+
+
+2017-11-15 14:37:32,752
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:87)
+======================
+
+
+2017-11-15 14:37:32,752
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:88)
+sql:	INSERT INTO GSC_PAN 
+  (                 
+    CM_ID,          
+    NAME,           
+    PASSWORD,       
+    USE_YN          
+  )                 
+  VALUES            
+  (                 
+    ?,              
+    ?,              
+    ?,              
+    ?               
+  )                 
+
+
+
+2017-11-15 14:37:32,752
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:89)
+======================
+
+
+2017-11-15 14:37:32,767
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:98)
+======================
+
+
+2017-11-15 14:37:32,767
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:99)
+pan:	GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:37:32,767
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:100)
+flag:	1
+
+
+2017-11-15 14:37:32,767
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:101)
+======================
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:142)
+======================
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:143)
+sql:	SELECT CM_ID,        
+       NAME,         
+       PASSWORD,     
+       USE_YN        
+  FROM GSC_PAN       
+ WHERE CM_ID = ?     
+
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:144)
+======================
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:146)
+======================
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:147)
+pan:	james
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:148)
+======================
+
+
+2017-11-15 14:37:32,846
+DEBUG : com.sist.GscMain.main(GscMain.java:60)
+데이터 등록 성공GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:41:33,215
+DEBUG : com.sist.GscMain.main(GscMain.java:38)
+deleteFlag:1
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:90)
+======================
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:91)
+sql:	INSERT INTO GSC_PAN 
+  (                 
+    CM_ID,          
+    NAME,           
+    PASSWORD,       
+    USE_YN          
+  )                 
+  VALUES            
+  (                 
+    ?,              
+    ?,              
+    ?,              
+    ?               
+  )                 
+
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:92)
+======================
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:101)
+======================
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:102)
+pan:	GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:103)
+flag:	1
+
+
+2017-11-15 14:41:33,246
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:104)
+======================
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:145)
+======================
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:146)
+sql:	SELECT CM_ID,        
+       NAME,         
+       PASSWORD,     
+       USE_YN        
+  FROM GSC_PAN       
+ WHERE CM_ID = ?     
+
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:147)
+======================
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:149)
+======================
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:150)
+pan:	james
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:151)
+======================
+
+
+2017-11-15 14:41:33,293
+DEBUG : com.sist.GscMain.main(GscMain.java:60)
+데이터 등록 성공GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 15:27:02,188
+DEBUG : com.sist.GscMain.main(GscMain.java:41)
+deleteFlag:1
+
+
+2017-11-15 15:27:02,219
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:90)
+======================
+
+
+2017-11-15 15:27:02,219
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:91)
+sql:	INSERT INTO GSC_PAN 
+  (                 
+    CM_ID,          
+    NAME,           
+    PASSWORD,       
+    USE_YN          
+  )                 
+  VALUES            
+  (                 
+    ?,              
+    ?,              
+    ?,              
+    ?               
+  )                 
+
+
+
+2017-11-15 15:27:02,219
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:92)
+======================
+
+
+2017-11-15 15:27:02,235
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:101)
+======================
+
+
+2017-11-15 15:27:02,235
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:102)
+pan:	GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+
+
+2017-11-15 15:27:02,235
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:103)
+flag:	1
+
+
+2017-11-15 15:27:02,235
+DEBUG : com.sist.GscPanDao.add(GscPanDao.java:104)
+======================
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:145)
+======================
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:146)
+sql:	SELECT CM_ID,        
+       NAME,         
+       PASSWORD,     
+       USE_YN        
+  FROM GSC_PAN       
+ WHERE CM_ID = ?     
+
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:147)
+======================
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:149)
+======================
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:150)
+pan:	james
+
+
+2017-11-15 15:27:02,251
+DEBUG : com.sist.GscPanDao.get(GscPanDao.java:151)
+======================
+
+
+2017-11-15 15:27:02,266
+DEBUG : com.sist.GscMain.main(GscMain.java:63)
+데이터 등록 성공GscPanVO [cmId=james, name=다현아빠, password=1234, useYn=0]
+

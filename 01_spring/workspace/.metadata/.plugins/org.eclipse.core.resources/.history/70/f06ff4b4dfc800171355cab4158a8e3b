@@ -1,0 +1,10 @@
+package com.sist;
+
+/**
+ * 위원회 VO
+ * @author sist1
+ *
+ */
+public class GscPanVO {
+
+}

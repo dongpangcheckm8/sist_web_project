@@ -1,0 +1,15 @@
+package com.sist;
+
+/**
+ * 위원회 VO
+ * @author sist1
+ * @version : 0.1
+ * @since: 2017/11/14
+ *
+ */
+public class GscPanVO {
+	private String cmId	    ;
+	private String name	    ;
+	private String password	;
+	private String useYn	;
+}

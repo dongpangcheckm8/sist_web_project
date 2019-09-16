@@ -1,0 +1,259 @@
+package com.sist;
+
+import java.beans.Statement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import javax.sql.DataSource;
+
+import org.apache.log4j.Logger;
+import org.springframework.jdbc.datasource.SimpleDriverDataSource;
+
+/**
+ * 위원회 Dao
+ * @author sist1
+ * @version : 0.2
+ * @since: 2017/11/14
+ *         2017/11/14: getConnection 추상메소드로 변경
+ *                     S/K사에 요청 사항 : DB를 유연하게 변경 하도록 추상클래스로 수정   
+ *         2017/11/14: 다건추가 테스트 : getCount()추가
+ */
+public class GscPanDao {
+    Logger log = Logger.getLogger(GscPanDao.class);
+
+    
+    private DataSource dataSource;
+
+	public void setDataSource(DataSource dataSource) {
+		this.dataSource = dataSource;
+	}
+
+
+
+	public GscPanDao(){}
+    
+    
+	/**
+	 * 전체글 Count
+	 * @return int
+	 * @throws SQLException
+	 */
+	public int getCount()throws SQLException{
+		int flag = 0;
+		Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        StringBuilder sb=new StringBuilder();
+        sb.append(" SELECT count(*) cnt  \n");
+        sb.append("   FROM GSC_PAN       \n");
+        
+        
+        pstmt = conn.prepareStatement(sb.toString());
+        rs = pstmt.executeQuery();
+        rs.next();
+        
+        flag = rs.getInt("cnt");
+        
+        log.debug("======================");
+        log.debug("sql:\t"+sb.toString());
+        log.debug("======================");
+        
+        log.debug("======================");
+        log.debug("pan:\t"+flag);
+        log.debug("======================");  
+        
+        rs.close();
+        pstmt.close();
+        conn.close();
+        
+        return flag;
+	}
+	
+
+	public int jdbcContextWithStatementStrategy(StatementStrategy stmt)
+			throws SQLException{
+		int flag = 0;
+		Connection con       = null;
+		PreparedStatement ps = null;
+		
+		try{
+			con = dataSource.getConnection();//변경발생			
+			
+			ps = stmt.makePreparedStatement(con);
+			
+			flag = ps.executeUpdate();
+		}catch(SQLException e){
+			throw e;
+			
+		}finally{
+			if(ps !=null){
+				try{
+					ps.close();
+				}catch(SQLException e){
+					
+				}
+			}
+			if(con !=null){
+				try{
+					con.close();
+				}catch(SQLException e){
+					
+				}
+			}
+		}
+		
+		
+		return flag;
+	}
+    
+	/**
+	 * 전체삭제
+	 * @return int
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public int deleteAll()throws SQLException{
+		int flag=0;		
+		//inner class
+		class DeleteAllStatement implements StatementStrategy {
+			
+
+			/* (non-Javadoc)
+			 * @see com.sist.StatementStrategy#makePreparedStatement(java.sql.Connection)
+			 */
+			public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+				PreparedStatement ps =null;
+				//sql 문
+				StringBuilder sb=new StringBuilder();
+				sb.append("delete from gsc_pan ");		
+				ps = c.prepareStatement(sb.toString());
+				return ps;
+			}
+
+		}		
+		//--
+		//StatementStrategy strategy =new DeleteAllStatement();
+		StatementStrategy strategy =new StatementStrategy(){
+			/* (non-Javadoc)
+			 * @see com.sist.StatementStrategy#makePreparedStatement(java.sql.Connection)
+			 */
+			public PreparedStatement makePreparedStatement(Connection c) throws SQLException {
+				PreparedStatement ps =null;
+				//sql 문
+				StringBuilder sb=new StringBuilder();
+				sb.append("delete from gsc_pan ");		
+				ps = c.prepareStatement(sb.toString());
+				return ps;
+			}			
+		};
+		
+		flag = jdbcContextWithStatementStrategy(strategy);	
+		return flag;
+	}
+	
+	/**
+	 * 위원회 멤버 추가
+	 * @param pan
+	 * @throws ClassNotFoundException
+	 * @throws SQLException
+	 */
+	public void add(GscPanVO pan) throws
+    SQLException{
+	    
+        Connection conn         = dataSource.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs            = null;
+
+        StringBuilder sb=new StringBuilder();
+        sb.append("INSERT INTO GSC_PAN \n");
+        sb.append("  (                 \n");
+        sb.append("    CM_ID,          \n");
+        sb.append("    NAME,           \n");
+        sb.append("    PASSWORD,       \n");
+        sb.append("    USE_YN          \n");
+        sb.append("  )                 \n");
+        sb.append("  VALUES            \n");
+        sb.append("  (                 \n");
+        sb.append("    ?,              \n");
+        sb.append("    ?,              \n");
+        sb.append("    ?,              \n");
+        sb.append("    ?               \n");
+        sb.append("  )                 \n");
+        
+        
+        log.debug("======================");
+        log.debug("sql:\t"+sb.toString());
+        log.debug("======================");
+        pstmt = conn.prepareStatement(sb.toString());
+        
+        pstmt.setString(1, pan.getCmId());
+        pstmt.setString(2, pan.getName());
+        pstmt.setString(3, pan.getPassword());
+        pstmt.setString(4, pan.getUseYn());
+        
+        int flag = pstmt.executeUpdate();
+        log.debug("======================");
+        log.debug("pan:\t"+pan.toString());
+        log.debug("flag:\t"+flag);
+        log.debug("======================");  
+        
+        pstmt.close();
+        conn.close();
+	}
+	
+    /**
+     * 위원회 멤버 단건 조회
+     * @param cmId
+     * @return GscPanVO 
+     * @throws ClassNotFoundException
+     * @throws SQLException
+     */
+     
+	public GscPanVO get(String cmId) throws
+	SQLException{
+
+        Connection conn = dataSource.getConnection();
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+
+        StringBuilder sb=new StringBuilder();
+        sb.append("SELECT CM_ID,        \n");
+        sb.append("       NAME,         \n");
+        sb.append("       PASSWORD,     \n");
+        sb.append("       USE_YN        \n");
+        sb.append("  FROM GSC_PAN       \n");
+        sb.append(" WHERE CM_ID = ?     \n");
+        
+        
+        pstmt = conn.prepareStatement(sb.toString());
+        pstmt.setString(1, cmId);
+        rs = pstmt.executeQuery();
+        rs.next();
+        
+        GscPanVO pan=new GscPanVO();
+        pan.setCmId(rs.getString("CM_ID"));
+        pan.setName(rs.getString("NAME"));
+        pan.setPassword(rs.getString("PASSWORD"));
+        pan.setUseYn(rs.getString("USE_YN"));
+        
+        log.debug("======================");
+        log.debug("sql:\t"+sb.toString());
+        log.debug("======================");
+        
+        log.debug("======================");
+        log.debug("pan:\t"+cmId);
+        log.debug("======================");  
+        
+        rs.close();
+        pstmt.close();
+        conn.close();
+        
+        return pan;
+	}	
+
+	
+}
